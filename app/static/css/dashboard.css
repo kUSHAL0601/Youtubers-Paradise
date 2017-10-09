@@ -1,0 +1,684 @@
+@import "compass/css3";
+      #profile-description {
+      width: 690px; margin-top: 50px; position:relative;
+      }
+      #profile-description .text {
+      width: 660px; margin-bottom: 5px; color: #777; padding: 0 15px; position:relative; font-family: Arial; font-size: 14px; display: block;
+      }
+      #profile-description .show-more {
+      width: 690px; color: #777; position:relative; font-size: 12px; padding-top: 5px; height: 20px; text-align: center; background: #f1f1f1; cursor: pointer;
+      }
+      #profile-description .show-more:hover { 
+      color: #1779dd;
+      }
+      #profile-description .show-more-height { height: 62px; overflow:hidden; }
+      .bs-example{
+      margin: 20px;
+      color: white;
+      font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
+      font-size: 17px;
+      }
+      .modal-content iframe{
+      margin: 0 auto;
+      display: block;
+      }
+      table
+      {
+      width: 100%;
+      }
+      .myInput{padding:8px;
+      display:block;
+      border:none;
+      border-bottom:1px solid #ccc;
+      width: 400px;
+      color: black;
+      border-radius: 10px;
+      }
+      td
+      {
+      width: 33%;
+      padding: 15px;
+      }
+      .rating {
+      overflow: hidden;
+      display: inline-block;
+      font-size: 0;
+      position: relative;
+      }
+      .rating-input {
+      float: right;
+      width: 16px;
+      height: 16px;
+      padding: 0;
+      margin: 0 0 0 -16px;
+      opacity: 0;
+      }
+      .rating-input:checked ~ .rating-star {
+      background-position: 0 0;
+      }
+      .rating-star {
+      position: relative;
+      float: right;
+      display: block;
+      width: 16px;
+      height: 16px;
+      background: url('http://kubyshkin.ru/samples/star-rating/star.png') 0 -16px;
+      }
+      .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: black;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      }
+
+      .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: white;
+      display: block;
+      transition: 0.5s;
+      }
+
+      .innerElements:hover
+      {
+      color: black;
+      background-color: white;
+      }
+
+      .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+      }
+
+      #main {
+      transition: margin-left .5s;
+      padding: 16px;
+      }
+
+      @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+      }
+      .cp {
+      color: #333333;
+      font-family: Impact, Charcoal, sans-serif;
+      font-weight: bold;
+      }
+
+      #more, #less
+      {
+      cursor: pointer;
+      display: inline-block;
+      padding: 0 .5em;
+      color: black;
+      font-size: .9em;
+      line-height: 2;
+      border: 1px solid #ddd;
+      border-radius: .25em;
+      font-weight: bold;
+      font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+      }
+      .bro {
+      color: #000000;
+      font-family: Baskerville, “Baskerville Old Face”, “Hoefler Text”, Garamond, “Times New Roman”, serif;
+      }
+      
+      body
+      {
+      background-image:url("headphones3.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: left;
+      background-size: cover;
+      }
+
+      h2, .anchor
+      {
+      font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+      }
+      .submit_btn {
+      background-color: ;
+      border: none;
+      color: black;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: no-drop;
+      border-radius: 10px;
+      font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+      }
+
+      .submit_btn:hover {
+      background-color: #cccccc;
+      color: black;
+      }
+      .anchor
+      {
+      font-size: 18px;
+      font-weight: bold;
+      }
+      .heads
+      {
+      color:white;
+      text-decoration:none;
+      }
+      .heads:link {
+      color: white;
+      text-decoration:none;
+      }
+
+      .heads:visited {
+      color: white;
+      text-decoration:none;
+      }
+      .heads:hover
+      {
+      color:white;
+      text-decoration:none;
+      }
+      .heads:active
+      {
+      color:white;
+      text-decoration:none;
+      }
+      a.cp:link {
+      color: black;
+      text-decoration: none;
+      }
+      
+      a.cp:visited {
+      color: black;
+      text-decoration: none;
+      }
+
+      a.cp:hover
+      {
+      color:#595959;
+      text-decoration: none;
+      }
+
+      a.cp:active {
+      color: black;
+      text-decoration: none;
+      }
+      .hd {
+      font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+      font-weight:bold;
+      color:black;
+      }
+      
+      .classname {
+      font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+      color:white;
+      }
+      .slideThree {
+      width: 100px;
+      height: 26px;
+      background: #333;
+      margin: 20px auto;
+      position: relative;
+      border-radius: 50px;
+      box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+      &:after {
+      content: 'OFF';
+      color: #000;
+      position: absolute;
+      right: 10px;
+      z-index: 0;
+      font: 12px/26px Arial, sans-serif;
+      font-weight: bold;
+      text-shadow: 1px 1px 0px rgba(255,255,255,.15);
+      }
+      &:before {
+      content: 'ON';
+      color: $activeColor;
+      position: absolute;
+      left: 10px;
+      z-index: 0;
+      font: 12px/26px Arial, sans-serif;
+      font-weight: bold;
+      }
+      label {
+      display: block;
+      width: 34px;
+      height: 20px;
+      cursor: pointer;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      z-index: 1;
+      background: #fcfff4;
+      background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+      border-radius: 50px;
+      transition: all 0.4s ease;
+      box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+      }
+      input[type=checkbox] {
+      visibility: hidden;
+      &:checked + label {
+      left: 43px;
+      }
+      }    
+      }
+
+      .mdal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      }
+
+      /* Modal Content */
+      .mdal-content {
+      position: relative;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 0;
+      border: 1px solid #888;
+      width: 45%;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+      animation-name: animatetop;
+      animation-duration: 0.4s
+      }
+
+      /* Add Animation */
+      @-webkit-keyframes animatetop {
+      from {top:-300px; opacity:0} 
+      to {top:0; opacity:1}
+      }
+
+      @keyframes animatetop {
+      from {top:-300px; opacity:0}
+      to {top:0; opacity:1}
+      }
+
+      /* The Close Button */
+      .clse {
+      color: white;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      }
+
+      .clse:hover,
+      .clse:focus {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      }
+
+      .mdal-header {
+      padding: 2px 16px;
+      background-color: #5cb85c;
+      color: white;
+      }
+
+      .mdal-body {padding: 2px 16px;}
+
+      .mdal-footer {
+      padding: 2px 16px;
+      background-color: #5cb85c;
+      color: white;
+      }
+      @import "compass/css3";
+      .bs-example{
+      margin: 20px;
+      color: white;
+      font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
+      font-size: 17px;
+      }
+      .modal-content iframe{
+      margin: 0 auto;
+      display: block;
+      }
+      table
+      {
+      width: 100%;
+      }
+      .myInput{padding:8px;
+      display:block;
+      border:none;
+      border-bottom:1px solid #ccc;
+      width: 400px;
+      color: black;
+      border-radius: 10px;
+      }
+      td
+      {
+      width: 33%;
+      padding: 15px;
+      }
+
+      .dropbtn
+      {
+      background-color: transparent;
+      color: white;
+      padding: 20px;
+      font-size: 25px;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+      font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+      }
+
+      .dropdown {
+      position: relative;
+      display: inline-block;
+      }
+
+      .dropdown-content {
+      border-radius: 5px;
+      display: none;
+      position: absolute;
+      background-color: #e6ffff;
+      min-width: 210px;
+      width: 100%;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      }
+
+      .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      }
+      .arrow-down {
+      width: 0; 
+      height: 0; 
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      margin-top: 200px;
+      border-top: 5px solid #ffffff;
+      }
+      .dropdown-content a:hover {
+      background-color: #f1f1f1;
+      border-radius: 5px;
+      }
+
+      .dropdown:hover .dropdown-content {
+      display: block;
+      }
+
+      .dropdown:hover .dropbtn {
+      background-color: white;
+      color: black;
+      opacity: 10;
+      }
+
+      body
+      {
+      background-image:url("headphones3.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: left;
+      background-size: cover;
+      }
+
+      h2, .anchor
+      {
+      font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+      }
+      .anchor
+      {
+      font-size: 18px;
+      font-weight: bold;
+      }
+      .heads
+      {
+      color:white;
+      text-decoration:none;
+      }
+      .heads:link {
+      color: white;
+      text-decoration:none;
+      }
+
+      .heads:visited {
+      color: white;
+      text-decoration:none;
+      }
+      .heads:hover
+      {
+      color:white;
+      text-decoration:none;
+      }
+      .heads:active
+      {
+      color:white;
+      text-decoration:none;
+      }
+      
+      .classname {
+      font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+      color:white;
+      }
+      .slideThree {
+      width: 100px;
+      height: 26px;
+      background: #333;
+      margin: 20px auto;
+      position: relative;
+      border-radius: 50px;
+      box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+      &:after {
+      content: 'OFF';
+      color: #000;
+      position: absolute;
+      right: 10px;
+      z-index: 0;
+      font: 12px/26px Arial, sans-serif;
+      font-weight: bold;
+      text-shadow: 1px 1px 0px rgba(255,255,255,.15);
+      }
+      &:before {
+      content: 'ON';
+      color: $activeColor;
+      position: absolute;
+      left: 10px;
+      z-index: 0;
+      font: 12px/26px Arial, sans-serif;
+      font-weight: bold;
+      }
+      label {
+      display: block;
+      width: 34px;
+      height: 20px;
+      cursor: pointer;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      z-index: 1;
+      background: #fcfff4;
+      background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+      border-radius: 50px;
+      transition: all 0.4s ease;
+      box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3);
+      }
+      input[type=checkbox] {
+      visibility: hidden;
+      &:checked + label {
+      left: 43px;
+      }
+      }    
+      }
+      .mdal1 {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      }
+
+      /* Modal Content */
+      .mdal-content1 {
+      position: relative;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 0;
+      border: 1px solid #888;
+      width: 45%;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+      animation-name: animatetop;
+      animation-duration: 0.4s
+      }
+
+      /* Add Animation */
+      @-webkit-keyframes animatetop {
+      from {top:-300px; opacity:0} 
+      to {top:0; opacity:1}
+      }
+
+      @keyframes animatetop {
+      from {top:-300px; opacity:0}
+      to {top:0; opacity:1}
+      }
+
+      /* The Close Button */
+      .clse1 {
+      color: white;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      }
+
+      .clse1:hover,
+      .clse1:focus {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      }
+
+      .mdal-header1 {
+      padding: 2px 16px;
+      background-color: #5cb85c;
+      color: white;
+      }
+
+      .mdal-body1 {padding: 2px 16px;}
+
+      .mdal-footer1 {
+      padding: 2px 16px;
+      background-color: #5cb85c;
+      color: white;
+      }
+
+      .mdal2 {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      }
+
+      /* Modal Content */
+      .mdal-content2 {
+      position: relative;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 0;
+      border: 1px solid #888;
+      width: 45%;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+      animation-name: animatetop;
+      animation-duration: 0.4s
+      }
+
+      /* Add Animation */
+      @-webkit-keyframes animatetop {
+      from {top:-300px; opacity:0} 
+      to {top:0; opacity:1}
+      }
+
+      @keyframes animatetop {
+      from {top:-300px; opacity:0}
+      to {top:0; opacity:1}
+      }
+
+      /* The Close Button */
+      .clse2 {
+      color: white;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      }
+
+      .clse2:hover,
+      .clse2:focus {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      }
+
+      .mdal-header2 {
+      padding: 2px 16px;
+      background-color: #5cb85c;
+      color: white;
+      }
+
+      .mdal-body2 {padding: 2px 16px;}
+
+      .mdal-footer2 {
+      padding: 2px 16px;
+      background-color: #5cb85c;
+      color: white;
+      }
+
+          .modal-load {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('../static/images/circle.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+body.loading {
+    overflow: hidden;   
+}
+body.loading .modal-load {
+    display: block;
+}

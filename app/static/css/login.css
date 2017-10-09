@@ -1,0 +1,50 @@
+.inpform
+{
+	margin-left:35%;
+	margin-top: 80px;
+	margin-bottom:55px
+}
+
+tr>td
+{
+  padding-bottom: 1em;
+}
+
+.btn:hover
+{
+	background-color:white;
+	color:black;
+	margin-top: 0px;
+}
+
+.btn
+{
+	background-color:transparent;
+	color:white;
+	margin-top: 0px;
+}
+
+.bimage
+{
+	background-image:url('../images/guitar.jpg');
+	background-repeat: no-repeat;
+	background-color: black;
+}
+
+.inputrow
+{
+	color: white;
+	text-align:center;
+	font-weight:bold;
+	font-size:25px;
+}
+
+.inputbox
+{
+	text-align: center;
+	border-radius: 25px;
+	border: 2px solid white;
+	background-color:transparent;
+	color:white;font-weight:bold;
+	height:35px;
+}

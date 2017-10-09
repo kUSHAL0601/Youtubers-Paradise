@@ -1,0 +1,83 @@
+from flask import *
+from sqlalchemy import *
+from sqlalchemy.exc import *
+from app import db
+from app.user.models import User
+from .models import Gallery
+
+mod_gallery = Blueprint('gallery', __name__)
+
+
+@mod_gallery.route('/addVideo', methods=['POST'])
+def add_video():
+    if 'user_id' not in session:
+        return jsonify(success=False,message="Authorization required"),400
+    try:
+        username = request.form.get('username')
+        video_id = request.form.get('video_id')
+        name = request.form.get('name')
+    except KeyError as e:
+        return jsonify(success=False, message="%s not sent in the request" % e.args), 400
+    userlist=User.query.filter(User.username==username).all()
+    if(userlist==[]):
+        return jsonify(success=False,message="This user doesn't exsist"), 400
+    for user in userlist:
+        if(user.id!=(session['user_id'])):
+            return jsonify(success=False,message="Do not mess with others account"), 400
+    gallerylist=Gallery.query.filter(Gallery.user_id==session['user_id']).all()
+    for vid in gallerylist:
+        if(vid.name==name or vid.video_id==video_id):
+            return jsonify(success=False,message="Video Already There"), 400
+    u = Gallery(str(name),session['user_id'],str(video_id))
+    #return jsonify(str(u.name)+' '+str(u.video_id)+' '+str(u.user_id))
+    db.session.add(u)
+    try:
+        db.session.commit()
+    except IntegrityError as e:
+        return jsonify(success=False, message="This video already exists"), 400
+
+    return jsonify(success=True)
+
+@mod_gallery.route('/allVideo', methods=['GET'])
+def get_all_video():
+    if 'user_id' not in session:
+        return jsonify(success=False,message="Authorization required")
+    try:
+        username = request.args.get('username')
+    except KeyError as e:
+        return jsonify(success=False, message="%s not sent in the request" % e.args), 400
+    userlist=User.query.filter(User.username==username).all()
+    if(userlist==[]):
+        return jsonify(success=False,message="This user doesn't exist"), 400
+    for user in userlist:
+        if(user.id!=session['user_id']):
+            return jsonify(success=False,message="Do not mess with others account"), 400
+    videos=Gallery.query.filter(Gallery.user_id==session['user_id'])
+    listofvideos=[]
+    for i in videos:
+        listofvideos.append(i.to_dict())
+    return jsonify(success=True,list=listofvideos)
+
+@mod_gallery.route('/deleteVideo', methods=['POST'])
+def del_video():
+    if 'user_id' not in session:
+        return jsonify(success=False,message="Authorization required"),400
+    try:
+        username = request.form.get('username')
+        name = request.form.get('name')
+    except KeyError as e:
+        return jsonify(success=False, message="%s not sent in the request" % e.args), 400
+    userlist=User.query.filter(User.username==username).all()
+    if(userlist==[]):
+        return jsonify(success=False,message="This user doesn't exsist"), 400
+    for user in userlist:
+        if(user.id!=(session['user_id'])):
+            return jsonify(success=False,message="Do not mess with others account"), 400
+    u=Gallery.query.filter(and_(Gallery.user_id==session['user_id'],Gallery.name==name)).first()
+    db.session.delete(u)
+    try:
+        db.session.commit()
+    except IntegrityError as e:
+        return jsonify(success=False, message="This video already exists"), 400
+
+    return jsonify(success=True)

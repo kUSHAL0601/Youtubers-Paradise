@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>PLAYLISTS | YouTubers' Paradise</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="shortcut icon" href="../static/images/favicon.ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../static/css/playlist.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+  </head>
+  <body id="bd" style="background-image:url(../static/images/headphones3.jpg);">
+  <br />
+    <div id="mySidenav" class="sidenav" style="background-color: transparent;">
+  <a href="javascript:void(0)" class="closebtn" style="cursor: no-drop;font-size:30px;font-weight: bold;"><span id="username_head">12CHARNAME&nbsp;&nbsp;&nbsp;</span><span onclick="closeNav()">&times;</span></a>
+  <a  style="cursor: no-drop;font-size: 20px;margin-bottom:10px;margin-top:30px;" class="innerElements" onclick="dashboard_redirect()">DASHBOARD</a>
+  <a onclick="addpopup()" style="cursor: no-drop;font-size: 20px;margin-bottom:10px;" class="innerElements" id="myBtn">ADD PLAYLIST</a>
+  <a  style="cursor: no-drop;font-size: 20px;margin-bottom:10px;" class="innerElements" id="myBtn1" onclick="addpopup()">EDIT PLAYLIST</a>
+   <a  style="cursor: no-drop;font-size: 20px;margin-bottom:10px;" class="innerElements" id="myBtn2" onclick="addpopup()">REMOVE PLAYLIST</a>
+  <a  style="cursor: no-drop;font-size: 20px;margin-bottom:10px; " class="innerElements" onclick="logout()">LOGOUT</a>
+  
+</div>
+
+<div id="mySidenav3" class="sidenav3" style="background-color: transparent;">
+  <a href="javascript:void(0)" class="closebtn3" style="cursor: no-drop;font-size:30px; font-weight:bold; text-align:left; margin-top:10px; padding-top:10px;">PLAYLISTS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span onclick="closeNav1()">&times;</span></a>  
+ <div id="allPl" style="margin-top:10px; padding-top:10px;">
+</div>
+</div>
+
+
+<div id="myMdal" class="mdal">
+
+  <div class="mdal-content" >
+    <div class="mdal-header" style="background-color: black;color: white;">
+      <span class="clse" style="cursor: no-drop;">&times;</span>
+      <h2 style="text-align: center;font-weight: bold;padding-top: 0.5px;padding-bottom: 0.5px;">Add Playlist</h2>
+    </div>
+    <div class="mdal-body" style="background-color:white " id="add_body">
+      <h3>Enter Name For Playlist: </h3><br/><input autocomplete="off" type="text" id="pl_nm" placeholder="Unique Name" class="myInput" ><br />
+    </div>
+    <div class="mdal-footer" style="text-align: center;padding-bottom: 7px;padding-top: 7px;background-color: black;color: white;">
+    <button onclick="add_playlist();" class="submit_btn" style="text-align: center;">ADD</button>
+    </div>
+  </div>
+
+</div>
+
+<div id="myMdal1" class="mdal1">
+
+  <div class="mdal-content1" >
+    <div class="mdal-header1" style="background-color: black;color: white;">
+      <span class="clse1" style="cursor: no-drop;">&times;</span>
+      <h2 style="text-align: center;font-weight: bold;padding-top: 0.5px;padding-bottom: 0.5px;">EDIT PLAYLIST</h2>
+    </div>
+    <div class="mdal-body1" style="background-color:white " id="add_body1">
+<br>
+        <input type="checkbox" id="add_vid" onclick="chck1()"><span style="font-size: 20px;">&nbsp;Add Video</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="checkbox" id="rem_vid" onclick="chck2()"><span style="font-size: 20px;">&nbsp;Remove Video</span>
+		<span id="add_vid_pl">
+    <br>
+    <br>
+            <h3>Enter Playlist Name here: </h3><br/><input autocomplete="off" type="text" placeholder="Existing Playlist" class="myInput" id="add_us_plnm"><br />
+        <h3>For Video: </h3><br/>
+            <input type="checkbox" id="us_url" onclick="chck3()"><span style="font-size: 20px;">&nbsp;Use Url</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="checkbox" id="us_nm" onclick="chck4()"><span style="font-size: 20px;">&nbsp;Use Name</span>
+
+                <span id="add_us_url_inp">
+        <h3>Enter Url here: </h3><br/><input autocomplete="off" type="text" placeholder="Valid URL" class="myInput" id="add_us_url"><br /><input type="checkbox" id="chk_nm" onclick="chck()"><span style="font-size: 20px;">&nbsp;Use custom name</span>
+            <span id="Custom_name">
+      <h3>Enter Custom Name here: </h3><br/><input autocomplete="off" type="text" placeholder="Unique Custom Name" class="myInput" id="cstm_nm"><br /></span>
+              </span>
+        <span id="add_us_nm_inp">
+        <h3>Enter Name here: </h3><br/><input autocomplete="off" type="text" placeholder="Name Existing in Gallery" class="myInput" id="add_us_nm"><br />
+        </span>
+</span>
+       	<br />
+        <span id="rem_vid_pl">
+        <h3>Enter Playlist Name here: </h3><br/><input autocomplete="off" type="text" placeholder="Existing Playlist" class="myInput" id="rem_us_plnm"><br />
+        <h3>Enter Video Name here: </h3><br/><input autocomplete="off" type="text" placeholder="Name Existing in Playlist" class="myInput" id="rem_us_nm"><br />
+       	</span>
+        <br />
+    
+    </div>
+    <div class="mdal-footer1" style="text-align: center;padding-bottom: 7px;padding-top: 7px;background-color: black;color: white;">
+    <button onclick="edit()" class="submit_btn" style="text-align: center;">DONE</button>
+    </div>
+  </div>
+
+</div>
+
+
+
+<div id="myMdal3" class="mdal3">
+
+  <div class="mdal-content3" >
+    <div class="mdal-header3" style="background-color: black;color: white;">
+      <span class="clse3" style="cursor: no-drop;">&times;</span>
+      <h2 style="text-align: center;font-weight: bold;padding-top: 0.5px;padding-bottom: 0.5px;">Remove Playlist</h2>
+    </div>
+    <div class="mdal-body3" style="background-color:white " id="rem_body">
+      <h3>Enter Name Of Playlist: </h3><br/><input type="text" id="rm_nm" placeholder="Existing Name" class="myInput" autocomplete="off"><br />
+    </div>
+    <div class="mdal-footer3" style="text-align: center;padding-bottom: 7px;padding-top: 7px;background-color: black;color: white;">
+    <button onclick="rem_playlist();" class="submit_btn" style="text-align: center;">REMOVE</button>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<div >
+&nbsp;&nbsp;
+  <span id="menu" style="font-size:30px;cursor:no-drop;color: white;" onclick="openNav()">&#9776; MENU</span>
+  <span id="pl" style="font-size:30px;cursor:no-drop;padding-left:70%;color: white;padding-top: 10px;" onclick="openNav1()">&#9776; PLAYLISTS</span>
+</div>
+
+    <!--<div class="bs-example">
+      
+   <div id="warning" style="color:red"></div>
+      <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content" id="modal-content" onclick="ar()">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="hide()">×</button>
+              <h2 class="modal-title" id="md_title" style="color:black;text-align: center;font-weight: bold;">YouTube Video</h2>
+            </div>
+            <br>
+            <br>
+            <div class="modal-body" id="mb">
+            </div>
+            <br>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>-->
+    <div class="bs-example">
+      
+      <div id="warning" style="color:red"></div>
+      <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content" id="modal-content" onclick="ar()">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="hide()">×</button>
+              <h2 class="hd" style="color:black;text-align: center;font-weight: bold;" id="hding"></h2>
+            </div>
+            <div class="modal-body" id="mb">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <div class="modal-load"></div>
+ 
+<div id="pl_bd" style="color: white;">
+<h1 style="text-align: center;"><i id="pl_hd"></i></h1>
+      <table id="myTable">
+    </table>
+    <br>
+    <br>
+    <br>
+    <a href="#myModal" data-toggle="modal" id="play_all"><button type="button" onclick="pl_all()" style="margin-left: 45%;" class="submit_btn" >PLAY ALL</button></a>
+    </div>
+    <script type="text/javascript" src="../static/js/playlist.js"></script>
+  </body>
+</html>

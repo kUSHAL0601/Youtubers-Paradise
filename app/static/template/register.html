@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<style type="text/css">
+		table:{
+			margin: auto;
+			padding: 10px;
+		}
+		form:{
+			margin: auto;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+</head>
+<body>
+<table>
+	<thead>Welcome To Login Page</thead>
+	<tbody>
+		<tr>
+			<td>
+			<form method="POST">
+				<table>
+					<thead>Register</thead>
+					<br>
+					<br>
+					<tr>
+						<td>Name</td>
+						<td><input type="text" name="r_uname" placeholder="Enter Your Name" id="r_nm" autocomplete='off'></td>
+					</tr>
+					
+					<tr>
+						<td>User Name</td>
+						<td><input type="text" name="r_uname" placeholder="Unique User Name" id="r_name" autocomplete='off'></td>
+					</tr>
+					<tr>
+						<td>Password</td>
+						<td><input type="password" name="r_passwd" placeholder="Enter Password" id="r_pwd"></td>
+					</tr>
+					<tr>
+						<td>Confirm Password</td>
+						<td><input type="password" name="r_confrm_passwd" placeholder="Re-Enter Password" id="r_cpwd"></td>
+					</tr>
+					
+					<tr>
+						<td>
+							<button type="button" onclick="register()">Register</button>
+						</td>
+					</tr>
+				</table>
+			</form>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+<script type="text/javascript">
+	function register()
+	{
+		var pwd=$('#r_pwd').val();
+		var cpwd=$('#r_cpwd').val();
+		if(pwd!=cpwd)
+		{
+			alert("Enter Confirm Password Properly");
+		}
+		else
+		{
+			$.ajax({
+				url:'http://127.0.0.1:8080/api/register',
+				method:'POST',
+				data:{name:$('#r_nm').val(),username:$('#r_name').val(),password:$('#r_pwd').val()},
+				success:function(response)
+				{
+					console.log(response);
+				},
+				error:function(response)
+				{
+					console.log(response);
+				},
+			});
+		}
+	}
+	
+</script>
+</html>
