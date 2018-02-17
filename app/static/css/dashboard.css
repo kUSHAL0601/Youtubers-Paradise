@@ -221,7 +221,7 @@
       }
       
       .classname {
-      font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+      font-family:Verdana,sans-serif;
       color:white;
       }
       .slideThree {
@@ -471,10 +471,6 @@
       text-decoration:none;
       }
       
-      .classname {
-      font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
-      color:white;
-      }
       .slideThree {
       width: 100px;
       height: 26px;

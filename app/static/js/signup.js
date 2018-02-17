@@ -67,6 +67,7 @@ function register()
 					}
 					else
 					{
+						console.log(response.success);
 						alert("Invalid credentials");
 					}
 				},
@@ -104,3 +105,9 @@ function g()
 {
 window.location="http://127.0.0.1:8080/signup"
 }
+
+$("#r_cpwd").keyup(function(event) {
+    if (event.keyCode === 13) {
+        register();
+    }
+});

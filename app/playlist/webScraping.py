@@ -23,14 +23,16 @@ def get_profileimg(soup):
 
 def get_profile(soup):
     div_profile =  soup.find('div', {"class" : "yt-user-info"})
-    profilelink = div_profile.find("a", {"class" : "g-hovercard yt-uix-sessionlink spf-link "})
+    profilelink = div_profile.find("a", {"class" : "yt-uix-sessionlink spf-link "})
     link = "https://www.youtube.com" + str(profilelink['href'])
+    print ("link:",link)
     return link
 
 def get_name(soup):
     div_profile =  soup.find('div', {"class" : "yt-user-info"})
-    profilename = div_profile.find("a", {"class" : "g-hovercard yt-uix-sessionlink spf-link "})
+    profilename = div_profile.find("a", {"class" : "yt-uix-sessionlink spf-link "})
     name = profilename.text
+    print ("name",name)
     return name
 
 def crt(url):

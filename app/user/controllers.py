@@ -9,15 +9,21 @@ mod_user = Blueprint('user', __name__)
 
 @mod_user.route('/', methods=['GET'])
 def home_page():
-	return render_template('home.html')
+    if 'user_id' in session:
+        return redirect("/dashboard",code=302)
+    return render_template('home.html')
 
 @mod_user.route('/login', methods=['GET'])
 def login_page():
-	return render_template('/login.html')
+    if 'user_id' in session:
+        return redirect("/dashboard",code=302)
+    return render_template('/login.html')
 
 @mod_user.route('/signup', methods=['GET'])
 def signup_page():
-	return render_template('/signup.html')
+    if 'user_id' in session:
+        return redirect("/dashboard",code=302)
+    return render_template('/signup.html')
 
 @mod_user.route('/dashboard', methods=['GET'])
 def dashboard_page():

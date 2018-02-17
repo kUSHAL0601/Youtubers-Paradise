@@ -632,7 +632,7 @@ function closeNav() {
 }
 function openNav1() {
     document.getElementById("mySidenav3").style.width = "300px";
-    document.getElementById("bd").style.marginRight = "300px";
+    document.getElementById("bd").style.marginRight = "200px";
     
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
     $('#pl').hide();

@@ -535,7 +535,8 @@ function changef1(str)
     var divid = str + "div2";
     var imgdiv = document.getElementById(divid);
     var favid = str + "favc";
-    imgdiv.innerHTML = "<img src=\"../static/images/favc.png\" style=\"width:18px; height:18px; margin-left:10px; cursor:pointer; margin-top: 3px; margin-bottom: 7px; margin-right:10px;\" id=\"" + favid + "\" onclick=\"changef2('" + str + "')\"></img>Favourites";
+    imgdiv.innerHTML = "<img src=\"../static/images/favc.png\" style=\"width:18px; height:18px; margin: 3px 10px 7px 10px; cursor:pointer;\" id=\"" + favid + "\" onclick=\"changef2('" + str + "')\" ></img> \
+								<span style=\"padding-top:20px; margin-top:20px;\">Star</span>";
     return;
 }
 
@@ -546,7 +547,8 @@ function change_fav(str)
     var divid = str + "div2";
     var imgdiv = document.getElementById(divid);
     var favid = str + "favc";
-    imgdiv.innerHTML = "<img src=\"../static/images/favc.png\" style=\"width:18px; height:18px; margin-left:10px; cursor:pointer; margin-top: 3px; margin-bottom: 7px; margin-right:10px;\" id=\"" + favid + "\" onclick=\"changef2('" + str + "')\"></img>Favourites";
+    imgdiv.innerHTML = "<img src=\"../static/images/favc.png\" style=\"width:18px; height:18px; margin: 3px 10px 7px 10px; cursor:pointer;\" id=\"" + favid + "\" onclick=\"changef2('" + str + "')\" ></img> \
+								<span style=\"padding-top:20px; margin-top:20px;\">Star</span>";
     return;
 }
 
@@ -556,7 +558,8 @@ function changef2(str)
     var divid = str + "div2";
     var imgdiv = document.getElementById(divid);
     var favid = str + "favu";
-    imgdiv.innerHTML = "<img src=\"../static/images/favu.png\" style=\"width:18px; height:18px; margin-left:10px; margin-top: 3px; cursor:pointer; margin-bottom: 7px; margin-right:10px;\" id=\"" + favid + "\" onclick=\"changef1('" + str + "')\"></img>Favourites";
+    imgdiv.innerHTML = "<img src=\"../static/images/favu.png\" style=\"width:18px; height:18px; margin: 3px 10px 7px 10px; cursor:pointer;\" id=\"" + favid + "\" onclick=\"changef1('" + str + "')\" ></img> \
+								<span style=\"padding-top:20px; margin-top:20px;\">Star</span>";
     return;
 }
 
@@ -571,7 +574,8 @@ function change1(str)
     var wlid = str + "wlclicked";
     var x = "onclick=\"change2('" + str + "')";
     //console.log("PLZZZZ:",x);
-    imgdiv.innerHTML = "<img src=\"../static/images/wl2click.png\" style=\"width:18px; height:18px; cursor:pointer; margin-left:10px; margin-top: 5px; margin-bottom: 5px; margin-right:10px;\" id=\"" + wlid + "\" onclick=\"change2('" + str + "')\"></img>Later";
+    imgdiv.innerHTML = "<img src=\"../static/images/wl2click.png\" style=\"width:16px; height:16px; cursor:pointer; margin: 5px 3px 5px 11px;\" id=\"" + wlid + "\" onclick=\"change2('" + str + "')\"></img> \
+						<span style=\"padding-top:20px; margin-top:20px; position:relative; top:2px\">Later</span>";
     return;
 }
 function change(str)
@@ -586,7 +590,8 @@ function change(str)
     var wlid = str + "wlclicked";
     var x = "onclick=\"change2('" + str + "')";
     //console.log("PLZZZZ:",x);
-    imgdiv.innerHTML = "<img src=\"../static/images/wl2click.png\" style=\"width:18px; height:18px; cursor:pointer; margin-left:10px; margin-top: 5px; margin-bottom: 5px; margin-right:10px;\" id=\"" + wlid + "\" onclick=\"change2('" + str + "')\"></img>Later";
+    imgdiv.innerHTML = "<img src=\"../static/images/wl2click.png\" style=\"width:16px; height:16px; cursor:pointer; margin: 5px 3px 5px 11px;\" id=\"" + wlid + "\" onclick=\"change2('" + str + "')\"></img> \
+						<span style=\"padding-top:20px; margin-top:20px; position:relative; top:2px\">Later</span>";
     return;
 }
 
@@ -598,7 +603,8 @@ function change2(str)
     var imgdiv = document.getElementById(divid);
     imgdiv.innerHTML = "";
     var wlid = str + "wlnormal";
-    imgdiv.innerHTML = "<img src=\"../static/images/w21.jpg\" style=\"width:18px; height:18px; cursor:pointer; margin-left:10px; margin-bottom: 5px; margin-top: 5px; margin-right:10px;\" id=\"" + wlid + "\" onclick=\"change1('" + str + "')\"></img>Later";
+    imgdiv.innerHTML = "<img src=\"../static/images/w21.jpg\" style=\"width:16px; height:16px; cursor:pointer; margin: 5px 3px 5px 11px;\" id=\"" + wlid + "\" onclick=\"change1('" + str + "')\"></img> \
+						<span style=\"padding-top:20px; margin-top:20px; position:relative; top:2px\">Later</span>";
     return;
 }
 
@@ -792,8 +798,29 @@ function addImg(str)
 	var table = document.getElementById("myTable");
 	gallery.push(str);
 	
-	//var opn = "<table style=\"width:100%\"><tr><td style=\"width:25%\"><div class=\"slideThree\" style=\"padding-left:0px;\"><input type=\"checkbox\" value=\"None\" class=\"w3check\" id=\""+ str + "check\" style=\"margin-left:15px; margin-right:10px;\" name=\"check\" style=\"padding:10px;\" /><label for=\"slideThree\" class=\"classname\">Loop</label></div></td><td style=\"width:25%\"><div class=\"slideThree\" style=\"width:130px; color:white; font-weight:bold;\"><span class=\"rating\"><input type=\"checkbox\" class=\"rating-input\" id=\"rating-input-1-5\" name=\"rating-input-1\" style=\"display:none;\"><label for=\"rating-input-1-5\" class=\"rating-star\" style=\"margin-left:10px; margin-top: 5px; margin-right:10px;\" id =\"" + str + "fav\"></label></span><span style=\"height:100%; margin: 8px 5px 5px 5px;\">Favourite</span></div></td><td style=\"width:50%\"><div class=\"slideThree\" style=\"width:90px; color:white; font-weight:bold;\" id=\"blah\"><img src=\"../static/images/w21.jpg\" style=\"width:18px; height:18px; cursor:pointer; margin-left:10px; margin-top: 5px; margin-bottom: 5px; margin-right:10px;\" id=\"" + str + "wlnormal\" onclick=\"change1('" + str + "')\"></img><span style=\"padding-top:20px; margin-top:20px;\">Later</span></div></td></tr></table>";
-	var opn = "<table style=\"width:100%\"><tr><td style=\"width:25%\"><div class=\"slideThree\" style=\"padding-left:0px;\"><input type=\"checkbox\" value=\"None\" class=\"w3check\" id=\""+ str + "check\" style=\"margin-left:15px; margin-right:10px; margin-top:6px; margin-bottom:0px;\" name=\"check\" style=\"padding:10px;\" /><label for=\"slideThree\" class=\"classname\">Loop</label></div></td><td style=\"width:25%\"><div class=\"slideThree\" style=\"width:130px; color:white; font-weight:bold;\" id=\"" + str + "div2\"><img src=\"../static/images/favu.png\" style=\"width:18px; height:18px; margin-left:10px; margin-top: 3px; cursor:pointer; margin-bottom: 7px; margin-right:10px;\" id=\"" + str + "favu\" onclick=\"changef1('" + str + "')\"></img><span style=\"padding-top:20px; margin-top:20px;\">Favourites</span></div></td><td style=\"width:50%\"><div class=\"slideThree\" style=\"width:90px; color:white; font-weight:bold;\" id=\"" + str + "div\"><img src=\"../static/images/w21.jpg\" style=\"width:18px; height:18px; cursor:pointer; margin-left:10px; margin-top: 5px; margin-bottom: 5px; margin-right:10px;\" id=\"" + str + "wlnormal\" onclick=\"change1('" + str + "')\"></img><span style=\"padding-top:20px; margin-top:20px;\">Later</span></div></td></tr></table>";
+		var opn = "<table style=\"width:85%\"> \
+					<tr> \
+						<td style=\"width:33%; padding-left:0px; padding-right:0px\"> \
+						 	<div class=\"slideThree\" style=\"padding-left:0px; padding-right:0px; font-weight:bold; margin-left:0px\"> \
+						 		<input type=\"checkbox\" value=\"None\" class=\"w3check\" id=\""+ str + "check\" style=\"margin-left:15px; margin-right:4px; padding:10px; position:relative; top:1px;\" name=\"check\" /> \
+						 		<label for=\"slideThree\" class=\"classname\" style=\"position: relative; top: 3px; font-weight:bold\">Loop</label> \
+						 	</div> \
+						 </td> \
+						 <td style=\"width:33%; padding:15px 0px\"> \
+						 	<div class=\"slideThree\" style=\"width:95px; color:white; font-weight:bold; margin: 12px 0px\" id=\"" + str + "div2\"> \
+						 		<img src=\"../static/images/favu.png\" style=\"width:18px; height:18px; margin: 3px 10px 7px 10px; cursor:pointer;\" id=\"" + str + "favu\" onclick=\"changef1('" + str + "')\" ></img> \
+								<span style=\"padding-top:20px; margin-top:20px;\">Star</span> \
+						 	</div> \
+						 </td> \
+						<td style=\"width:33%; padding:15px 0px\"> \
+							<div class=\"slideThree\" style=\"width:97px; color:white; font-weight:bold; margin: 20px 0px\" id=\"" + str + "div\"> \
+								<img src=\"../static/images/w21.jpg\" style=\"width:16px; height:16px; cursor:pointer; margin: 5px 3px 5px 11px;\" id=\"" + str + "wlnormal\" onclick=\"change1('" + str + "')\"> \
+								</img> \
+								<span style=\"padding-top:20px; margin-top:20px; position:relative; top:2px\">Later</span> \
+							</div> \
+						</td> \
+					</tr> \
+				</table>";
 	
 	//console.log(opn);
 	if((c%3)==0)
