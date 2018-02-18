@@ -1,4 +1,5 @@
 var unm,flagn=0;
+var ldflag=0;
 $( document ).ready(function() {
     //    location.reload();
     loadwl();
@@ -386,8 +387,7 @@ function f(url, response)
 	//console.log("Consider this: ",response);
 	response['name'] = response['name'];
 	var des="<div style=\"color:black; background-color:#cccccc; padding-left:20px; padding-right:20px; padding-top:20px; padding-bottom:30px;\"><p><table style=\"width:100%;\><tr><td style=\"width:50%;\"><a class=\"cp\" href=\"" + response['profile'] + "\"><img style=\"padding-right:15px;\" src=\"" + response['profile_img'] + "\"></img>" + response['name'] + "</a></td><td style=\"text-align:right; width:50%;\">" + response['date'] + "</td></tr></table></p><div style=\"text-align:center;\"><button onclick=\"showm();\" id=\"more\">VIEW DESCRIPTION</button></div><br/><div id = \"descr\" style=\"overflow:scroll;height:300px;\"><p style=\"class:bro;\">" + response['desc'] + "</p></div><div style=\"text-align:center;\"><button onclick=\"showl();\" id=\"less\">HIDE DESCRIPTION</button></div></div>";
-	a.innerHTML = addn + des;
-    }
+	a.innerHTML = addn +"<br><center><button style='background-color:black;padding: 15px 32px;border-radius: 12px;' onclick=download(\""+url+"\")>DOWNLOAD</button></center><br>" + des;    }
     else
     {
 	a.innerHTML = addn;
@@ -1160,4 +1160,30 @@ function usernamefill()
     });
 
 }
+function download(id)
+{
+	alert("Download started. Will be available in home folder of app with name "+id);
+    $.ajax({
+	url:'http://127.0.0.1:8080/downloadVideo',
+	method:'POST',
+	data:{vid:id},
+	success:function(response)
+	{
+		ldflag=1;
+	    console.log(response);
+	    ldflag=0;
+	},
+	error:function(response)
+	{
+	    alert('Download Failed');
+	    ldflag=0;
+	},
+    });
+}
 usernamefill();
+$body = $("body");
+
+$(document).on({
+    ajaxStart: function() { if(ldflag==0)$body.addClass("loading");    },
+     ajaxStop: function() { $body.removeClass("loading"); }    
+});

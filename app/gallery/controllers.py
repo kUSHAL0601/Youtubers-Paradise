@@ -4,6 +4,7 @@ from sqlalchemy.exc import *
 from app import *
 from app.user.models import *
 from .models import *
+import youtube_dl
 
 mod_gallery = Blueprint('gallery', __name__)
 
@@ -115,3 +116,21 @@ def get_details():
 	if video is None:
 		return jsonify(success=False,message='No Such Video Exist'),200
 	return jsonify(video.to_dict())
+
+@mod_gallery.route('/downloadVideo', methods=['POST'])
+@requires_auth
+def download_video():
+#    if 'user_id' not in session:
+#       return jsonify(success=False,message="Authorization required"),200
+    try:
+        vid = request.form.get('vid')
+    except KeyError as e:
+        return jsonify(success=False, message="%s not sent in the request" % e.args), 200
+
+    ydl = youtube_dl.YoutubeDL({'outtmpl': '%(id)s.%(ext)s'})
+    with ydl:
+        result = ydl.extract_info(
+            'https://youtu.be/'+vid,
+            download=True
+        )
+    return jsonify(success=True)
