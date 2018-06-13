@@ -1162,7 +1162,7 @@ function usernamefill()
 }
 function download(id)
 {
-	alert("Download started. Will be available in home folder of app with name "+id);
+	alert("Download started. Will be available in download folder of app with name "+id);
     $.ajax({
 	url:'http://127.0.0.1:8080/downloadVideo',
 	method:'POST',
