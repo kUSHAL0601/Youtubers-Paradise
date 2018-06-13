@@ -127,7 +127,7 @@ def download_video():
     except KeyError as e:
         return jsonify(success=False, message="%s not sent in the request" % e.args), 200
 
-    ydl = youtube_dl.YoutubeDL({'outtmpl': '%(id)s.%(ext)s'})
+    ydl = youtube_dl.YoutubeDL({'outtmpl': './downloads/%(id)s.%(ext)s'})
     with ydl:
         result = ydl.extract_info(
             'https://youtu.be/'+vid,
